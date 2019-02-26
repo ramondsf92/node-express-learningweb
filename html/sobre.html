@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Meu Sobre</title>
+</head>
+<body>
+    <h1 id='titulo'>Esse é meu título!</h1>
+    <input id='entrada'>
+    <button id='botaoSobre'>Clique aqui!</button>
+    <script>
+            let botao = document.querySelector('#botaoSobre');
+            let ent = document.getElementById('entrada');
+            let sub = document.createElement('h3');
+            sub.textContent = "Palavra digitada: ";
+            document.body.appendChild(sub);
+
+            botao.onclick = function() {
+                document.querySelector('#titulo').textContent = "Esse é meu sobre!";
+            };
+            ent.onkeyup = function() {
+                let palavra = ent['value'];
+                if(palavra != "")
+                    document.getElementById('titulo').textContent = `Esse é meu ${palavra}`;
+                sub.textContent = "Palavra digitada: " + palavra;
+            }
+        </script>
+</body>
+</html>
